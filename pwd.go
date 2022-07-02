@@ -41,7 +41,7 @@ func uploadPath() {
 func osInfo() {
 	fileInfo, err := os.Stat("file")
 	if err != nil {
-		fmt.Printf(err)
+		fmt.Printf(err.Error())
 	} else {
 		is_dir := fileInfo.IsDir()
 	        fmt.Printf("os.FileInfo.IsDir(): %v\n", is_dir)

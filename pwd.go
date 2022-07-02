@@ -39,9 +39,14 @@ func uploadPath() {
 }
 
 func osInfo() {
-	fileInfo, _ := os.Stat("file")
-	is_dir := fileInfo.IsDir()
-	fmt.Printf("os.FileInfo.IsDir(): %v\n", is_dir)
+	fileInfo, err := os.Stat("file")
+	if err != nil {
+		ftm.Printf(err)
+	} else {
+		is_dir := fileInfo.IsDir()
+	        fmt.Printf("os.FileInfo.IsDir(): %v\n", is_dir)
+	}
+
 }
 
 func main() {
